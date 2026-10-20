@@ -22,6 +22,28 @@ A REST API built using FastAPI and PostgreSQL to retrieve, search, and explore I
 - **Data Validation:** Pydantic
 - **Testing:** Pytest, HTTPX
 
+## Approach and Methodology
+
+I approached this assignment by building a RESTful API that provides structured access to Indian bank and branch information.
+
+### 1. Database Design
+I used PostgreSQL to store the bank and branch records in two related tables. The `banks` table stores bank IDs and names, while the `branches` table stores branch details, including IFSC codes, addresses, cities, districts, and states. The `bank_id` field establishes the relationship between a bank and its branches.
+
+### 2. API Development
+I used FastAPI to implement the REST endpoints and SQLAlchemy to interact with PostgreSQL. I separated database models, request/response schemas, database configuration, and CRUD operations into individual modules to keep the code organized and maintainable.
+
+### 3. Endpoint Implementation
+I implemented endpoints to retrieve all banks and branches with pagination, fetch individual banks by ID, retrieve branches by IFSC code, list branches belonging to a specific bank, and search branches using relevant fields such as branch name, address, city, district, and state.
+
+### 4. Validation and Error Handling
+I used Pydantic schemas and FastAPI's parameter validation to validate inputs. The API returns appropriate HTTP status codes when records are not found or request parameters are invalid. I also added a database health-check endpoint to verify database connectivity.
+
+### 5. Testing
+I used Pytest and HTTPX to test the API endpoints, including successful requests, missing records, search functionality, and pagination validation. The test suite passed all eight tests.
+
+### 6. Deployment
+I deployed the FastAPI application on Vercel and hosted the PostgreSQL database on Neon. I configured the database connection through environment variables to keep credentials separate from the application code.
+
 ## Project Structure
 
 ```text
