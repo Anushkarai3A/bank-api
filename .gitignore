@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+
+# Environment variables and secrets
+.env
+
+# Editors
+.vscode/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Local dataset files
+indian_banks/
